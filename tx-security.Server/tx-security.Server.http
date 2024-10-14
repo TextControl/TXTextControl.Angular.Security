@@ -1,0 +1,6 @@
+@tx_security.Server_HostAddress = http://localhost:5211
+
+GET {{tx_security.Server_HostAddress}}/txsecuritytoken/
+Accept: application/json
+
+###

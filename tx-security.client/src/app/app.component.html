@@ -1,0 +1,30 @@
+<h1 id="tableLabel">Security Token Sample</h1>
+
+<p>
+  This component demonstrates how to retrieve a security token from the server and how to use it.
+</p>
+
+<p *ngIf="!securityToken"><em>Loading... Please refresh once the ASP.NET backend has started. See <a href="https://aka.ms/jspsintegrationangular">https://aka.ms/jspsintegrationangular</a> for more details.</em></p>
+
+<table *ngIf="securityToken">
+  <thead>
+    <tr>
+      <th>AccessToken retrieved:</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      {{ securityToken.accessToken }}
+    </tr>
+  </tbody>
+</table>
+
+<div *ngIf="securityToken">
+  <tx-document-editor width="1000px"
+                      height="500px"
+                      webSocketURL="wss://localhost:7289/TXWebSocket?access_token={{ securityToken.accessToken }}">
+  </tx-document-editor>
+</div>
+
+
+
